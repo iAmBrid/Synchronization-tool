@@ -40,7 +40,7 @@ public class ContentController {
             if (content == null || StringUtil.isBlank(content.getText())){
                 return ResultUtil.fail("同步内容为空");
             }
-            // 如果与上次同步内容相同，返回同步失败
+            // 校验同步内容是否与上次相同
             String text = contentService.getLatestText();
             if (StringUtil.isNotBlank(text) && text.equals(content.getText())){
                 return ResultUtil.fail("该内容与上次同步内容相同");
@@ -48,7 +48,6 @@ public class ContentController {
             content.setCreateTime(new Date());
             content.setIp(IpUtil.getIpAddr(request));
             Boolean success = contentService.save(content);
-            int i = 1/0;
             if (success){
                 return ResultUtil.success("同步成功");
             }
