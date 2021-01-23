@@ -16,7 +16,7 @@ success:false,
 message:"获取同步内容失败"  
 }  
 * 特殊说明  
-如果无最新同步内容，返回success:true,
+如果无最新同步内容，返回success:true,message:"";
 
 ### 同步内容接口
 * URL:/content/save  
@@ -34,4 +34,8 @@ success:false,
 message:"同步内容失败"  
 }  
 * 特殊说明  
-如果同步内容与上次同步相同，会返回success:false;message:该内容与上次同步内容相同
+如果同步内容与上次同步相同，会返回success:false;message:"该内容与上次同步内容相同"
+
+### 待完善部分
+接口输入输出日志打印  
+日志格式完善(错误定位到行)
